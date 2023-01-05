@@ -1,4 +1,10 @@
-body {
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
   text-align: center;
   color: #403f3d;
   background-image: linear-gradient(
@@ -21,41 +27,58 @@ body {
     hsl(226deg 100% 50%) 100%
   );
   font-family: "Cerebri Sans", sans-serif, monospace;
-  width: 100vw;
-  height: 120vh;
 }
 
-.btn-search {
-  color: #990c1a;
+.wrapper{
+  height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container{
+  margin: 40px auto;
 }
 
 .input-group {
   margin: auto;
-  margin-top: 3%;
+  width: 40%;
+  margin-bottom: 10px;
 }
-.form-control {
-  border: none;
+
+.search-city{
+  width: 80%;
+}
+
+input{
+  padding-left: 8px;
+  font-size: 16px;
+  height: 36px;
+  border-radius: 7px;
+  border: 1px solid #990c1a;
 }
 
 .current_location {
-  margin-top: 1%;
+  font-size: 16px;
+  width: 37%;
   height: 28%;
+  border-radius: 7px;
+  border: 1px solid #990c1a;
+  margin-top: 1%;
   padding-top: 1%;
   padding-bottom: 1%;
   background: #fff;
   color: #747c83;
 }
 
-.input-group,
-.current_location {
-  border: 1px solid #990c1a;
-  width: 40%;
-  border-radius: 7px;
-}
-
 .current_location:hover {
   background: #f7dcb7;
   color: #403f3d;
+}
+
+.btn-search {
+  height: 36px;
+  width: 12%;
+  color: #990c1a;
 }
 
 h1 {
@@ -64,21 +87,34 @@ h1 {
 }
 
 .date {
-  font-size: 20px;
-  margin-bottom: -60px;
+  justify-content: space-between;
+  display: flex;
+  margin: 18px auto;
+  width: 20%;
+  font-size: 24px;
 }
-.day {
-  margin-right: -17%;
+
+@media only screen and (max-width: 1000px) {
+  .date {
+    margin: auto;
+    font-size: 18px;
+  }
 }
+
+@media only screen and (max-width: 768px) {
+  .date {
+    font-size: 13px;
+  }
+}
+
 
 .today-info {
   border: 2px solid #990c1a;
-  margin-bottom: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
   width: 50%;
   max-width: 600px;
-  margin: 60px auto;
+  margin: 0 auto;
   background-image: linear-gradient(
     to right bottom,
     #ffedd4,
@@ -102,7 +138,7 @@ h1 {
 
 .vertical-line {
   border-left: 3px solid rgb(122, 119, 119);
-  height: 120px;
+  height: 3px;
   margin-top: 27px;
   margin-left: 46px;
 }
@@ -118,9 +154,6 @@ h1 {
     margin: auto;
     margin-top: -30%;
     /* margin-left: 15%; */
-  }
-  .date {
-    font-size: 16px;
   }
   .day {
     padding-right: 5%;
@@ -172,6 +205,7 @@ h1 {
 }
 
 .forcast {
+  display: flex;
   font-size: 18px;
   max-width: 600px;
   margin: -10px auto;
